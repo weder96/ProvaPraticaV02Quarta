@@ -1,4 +1,3 @@
-# ProvaPraticaV02- Quarta-Feira
-# ProvaPraticaV02Quarta
-# provaPraticaV02Quarta
-# provaPraticaV02Quarta
+# ProvaPraticaV02- Quarta-Feira 
+
+### Resolvida
