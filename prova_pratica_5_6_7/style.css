@@ -1,0 +1,29 @@
+/* Definição das Variáveis de Cor */
+:root {
+    --color-bg-body: #e9ecef; 
+    --color-white: #FFFFFF;
+    --color-primary: #007bff;
+
+    --shadow-light: rgba(0, 0, 0, 0.1); 
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+
+    --color-text-subtle-light: #e9ecef; 
+    --color-text-dark: #333; 
+    --color-text-muted: #555; 
+
+    --color-bg-footer: #333; 
+
+    --color-border-light: #ccc;
+    --color-border-subtle: #eee; 
+
+    --color-button-success: #28a745; 
+    --color-button-success-hover: #218838;
+
+    --color-bg-error: #c82333; 
+
+    /* Cores para as classificações de IMC */
+    --color-text-imc-low: #ffc107; /* Amarelo */
+    --color-text-imc-normal: #28a745; /* Verde */
+    --color-text-imc-overweight: #fd7e14; /* Laranja */
+    --color-text-imc-obese: #dc3545; /* Vermelho */
+}

@@ -1,0 +1,23 @@
+/* Definição das Variáveis de Cor */
+:root {
+    --color-bg-body: #f8f9fa; 
+    --color-white: #FFFFFF; 
+    --color-black: #000000; 
+
+    --color-primary: #007bff;
+
+    --shadow-light: rgba(0, 0, 0, 0.1); 
+    --shadow-medium: rgba(0, 0, 0, 0.1); 
+
+    --color-text-heading: #343a40; 
+    --color-text-subtle-light: #e9ecef; 
+    --color-text-quote: #495057; 
+
+    --color-bg-container: #fff; 
+    --color-bg-quote-box: #e9ecef; 
+    --color-bg-footer: #333; 
+    --color-bg-accent: #ffc107; 
+
+    --color-button-success: #28a745; 
+    --color-button-success-hover: #218838; 
+}

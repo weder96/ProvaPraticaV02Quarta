@@ -1,0 +1,190 @@
+/* Definição das Variáveis de Cor */
+:root {
+    --color-bg-body: #f8f9fa; /* Fundo claro do corpo */
+    --color-white: #FFFFFF; /* Cor branca (usada para texto e fundos) */
+    --color-black: #000000; /* Cor preta */
+
+    --color-primary: #007bff; /* Cor primária (azul do header, borda da quote-box, cor do autor) */
+
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Sombra leve */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Sombra média (mesmo valor no snippet) */
+
+    --color-text-heading: #343a40; /* Cor dos títulos (h1 no container) */
+    --color-text-subtle-light: #e9ecef; /* Texto claro sutil (p no header, link footer) */
+    --color-text-quote: #495057; /* Cor do texto da citação */
+
+    --color-bg-container: #fff; /* Fundo do painel central */
+    --color-bg-quote-box: #e9ecef; /* Fundo da caixa de citação */
+    --color-bg-footer: #333; /* Fundo do footer */
+    --color-bg-accent: #ffc107; /* Fundo de destaque (número da quote) */
+
+    --color-button-success: #28a745; /* Fundo do botão verde */
+    --color-button-success-hover: #218838; /* Fundo do botão verde no hover */
+
+    /* Nota: Não há bordas fixas claras ou sutis neste snippet, mas poderiam ser adicionadas se necessário */
+    /* --color-border-light: #ccc; */
+    /* --color-border-subtle: #eee; */
+}
+
+
+/* Estilos existentes com variáveis aplicadas */
+body {
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background-color: var(--color-bg-body); 
+    margin: 0;
+    box-sizing: border-box;
+    /* Adicionar display flex para centralizar o conteúdo principal */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; // Pode ser útil se o footer não for fixo */
+}
+
+.base-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adicionar flex-grow: 1; aqui pode ajudar a empurrar o footer para baixo se ele não for fixo */
+    /* flex-grow: 1; */
+    /* Adicionar padding horizontal se não houver max-width no body */
+    padding: 0 20px;
+}
+
+
+.container {
+    background-color: var(--color-bg-container); 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px var(--shadow-medium); 
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 20px;
+    /* Adicionar display flex para organizar os elementos internos */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza itens na horizontal no flex column */
+    /* gap: 20px; // Adicionar gap pode simplificar o espaçamento */
+}
+
+h1 { /* Este h1 está dentro do .container */
+    color: var(--color-text-heading); 
+    margin-bottom: 30px;
+}
+
+header {
+    background-color: var(--color-primary); 
+    color: var(--color-white); 
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px var(--shadow-light); 
+}
+
+header h1 {
+    margin: 0;
+    color: var(--color-white); 
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1em;
+    color: var(--color-text-subtle-light); 
+    font-weight: bold;
+}
+
+
+.quote-box {
+    margin: 20px auto;
+    padding: 20px;
+    border-left: 5px solid var(--color-primary); 
+    background-color: var(--color-bg-quote-box); 
+    border-radius: 5px;
+    width: 100%; /* Garantir que ocupe a largura total no container */
+    box-sizing: border-box; /* Incluir padding e border na largura */
+    text-align: left; /* Alinhar texto da citação à esquerda */
+}
+
+#quote { /* Este é o blockquote dentro da quote-box */
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: var(--color-text-quote); 
+    line-height: 1.6;
+    margin-left: 0; /* Resetar margin padrão do blockquote */
+    margin-right: 0;
+    padding: 0; /* Resetar padding padrão do blockquote */
+}
+
+/* Pode ser necessário estilizar o <p> dentro do blockquote se o texto for atualizado nele */
+/* #quote p { margin: 0; } */
+
+
+#number-quote{
+    color: var(--color-black); 
+    background-color: var(--color-bg-accent); 
+    font-size: 2rem;
+    font-style: italic; 
+    text-align: left; 
+    width: 30px;
+    border-radius: 50%;
+    padding: 12px 10px 10px 20px;
+}
+
+
+#author {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-primary); 
+    text-align: right;
+    display: block;
+    margin-top: 10px;
+}
+
+#new-quote-btn {
+    background-color: var(--color-button-success); 
+    color: var(--color-white); 
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+#new-quote-btn:hover {
+    background-color: var(--color-button-success-hover); 
+}
+
+
+footer {
+    background-color: var(--color-bg-footer); 
+    color: var(--color-white); 
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: var(--color-text-subtle-light); 
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer span {
+    font-weight: bold;
+}

@@ -1,0 +1,202 @@
+/* Definição das Variáveis de Cor */
+:root {
+    --color-bg-body: #e9ecef; /* Fundo claro do corpo */
+    --color-white: #FFFFFF; /* Cor branca (usada para texto e fundos) */
+    --color-primary: #007bff; /* Cor primária (azul do header, h1 no container) */
+
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Sombra leve */
+    --shadow-medium: rgba(0, 0, 0, 0.1); /* Sombra média (mesmo valor no snippet) */
+
+    --color-text-subtle-light: #e9ecef; /* Texto claro sutil (subtítulo header, link footer) */
+    --color-text-dark: #333; /* Texto escuro (label input) */
+    --color-text-muted: #555; /* Texto suave (counters text - não usado neste snippet, mas mantido para consistência se viesse do outro) */
+
+    --color-bg-footer: #333; /* Fundo do footer */
+
+    --color-border-light: #ccc; /* Borda clara (input) */
+    --color-border-subtle: #eee; /* Borda sutil (top resultado) */
+
+    --color-button-success: #28a745; /* Fundo do botão verde */
+    --color-button-success-hover: #218838; /* Fundo do botão verde no hover */
+
+    --color-bg-error: #c82333; /* Fundo para mensagem de erro */
+
+    /* Cores para as classificações de IMC */
+    --color-text-imc-low: #ffc107; /* Amarelo */
+    --color-text-imc-normal: #28a745; /* Verde */
+    --color-text-imc-overweight: #fd7e14; /* Laranja */
+    --color-text-imc-obese: #dc3545; /* Vermelho */
+}
+
+
+/* Estilos existentes com variáveis aplicadas */
+body {
+    font-family: sans-serif;
+    min-height: 100vh;
+    background-color: var(--color-bg-body); /* Usando variável */
+    margin: 0;
+    box-sizing: border-box;
+    /* Pode adicionar display flex aqui se precisar centralizar todo o conteúdo principal entre header e footer */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; // Pode ser útil se o footer não for fixo e o conteúdo for curto */
+}
+
+.base-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Adicionar flex-grow: 1; aqui pode ajudar a empurrar o footer para baixo se ele não for fixo */
+    /* flex-grow: 1; */
+    /* Adicionar padding horizontal se não houver max-width no body */
+    padding: 0 20px;
+}
+
+.container {
+    background-color: var(--color-white); /* Usando variável */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-medium); /* Usando variável */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h1 { /* Este h1 é o que está dentro do .container */
+    color: var(--color-primary); /* Usando variável */
+    margin-bottom: 5px;
+}
+
+header {
+    background-color: var(--color-primary); /* Usando variável */
+    color: var(--color-white); /* Usando variável */
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px var(--shadow-light); /* Usando variável */
+}
+
+header h1 {
+    margin: 0;
+    color: var(--color-white); /* Usando variável */
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: var(--color-text-subtle-light); /* Usando variável */
+}
+
+.input-group {
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--color-text-dark); /* Usando variável */
+}
+
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border-light); /* Usando variável */
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#calcular-btn {
+    background-color: var(--color-button-success); /* Usando variável */
+    color: var(--color-white); /* Usando variável */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#calcular-btn:hover {
+    background-color: var(--color-button-success-hover); /* Usando variável */
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-top: 1px solid var(--color-border-subtle); /* Usando variável */
+    font-size: 1.1rem;
+    /* A cor do texto geral do resultado não estava definida neste bloco original,
+       mas classes específicas definem a cor para cada classificação */
+    /* color: var(--color-text-dark); // Poderia adicionar uma cor padrão aqui */
+    text-align: center;
+    min-height: 1.5em;
+}
+
+#erro-messagem{
+    width: 100%;
+    height: 3rem;
+    background-color: var(--color-bg-error); /* Usando variável */
+    color: var(--color-white); /* Usando variável */
+    font-weight: bold;
+    padding-top: 7px;
+    /* Adicionar padding horizontal se necessário */
+    /* padding-left: 10px; padding-right: 10px; */
+    box-sizing: border-box; /* Incluir padding no tamanho */
+}
+
+/* Estilos para as diferentes classificações (usando variáveis para cores) */
+.resultado-baixo {
+    color: var(--color-text-imc-low); /* Usando variável */
+    font-weight: bold;
+}
+.resultado-normal {
+    color: var(--color-text-imc-normal); /* Usando variável */
+    font-weight: bold;
+}
+.resultado-sobre {
+    color: var(--color-text-imc-overweight); /* Usando variável */
+    font-weight: bold;
+}
+.resultado-obesidade {
+    color: var(--color-text-imc-obese); /* Usando variável */
+    font-weight: bold;
+}
+
+
+footer {
+    background-color: var(--color-bg-footer); /* Usando variável */
+    color: var(--color-white); /* Usando variável */
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    /* margin-top: auto; // Pode não ser necessário com position: fixed */
+    position: fixed; /* Torna o footer fixo */
+    bottom: 0; /* Fixa na parte inferior */
+    left: 0; /* Garante largura total */
+    right: 0; /* Garante largura total */
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.8em;
+}
+
+footer a {
+    color: var(--color-text-subtle-light); /* Usando variável */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer span {
+    font-weight: bold;
+}
